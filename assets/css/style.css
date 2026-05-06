@@ -1,0 +1,516 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #f5f7fb;
+    color: #1e2a38;
+    overflow-x: hidden;
+}
+
+/* =========================
+   NAVBAR BASE (DESKTOP + MOBILE)
+========================= */
+.input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+.navbar {
+    background: linear-gradient(135deg, #ffffff, #ffffff);
+    color: rgb(0, 29, 71);
+    padding: 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+    font-weight: bold;
+    border-radius: 0 0 30px 30px;
+}
+
+/* LEFT LOGO */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-left img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.nav-left span {
+    font-weight: bold;
+    font-size: 36px;
+}
+
+/* CENTER MENU */
+.nav-center {
+    display: flex;
+    gap: 18px;
+}
+
+.nav-center a {
+    color: rgb(0, 29, 71);
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+    font-family: 'Fredoka', sans-serif;
+
+}
+
+.nav-center a:hover {
+    color: rgb(0, 17, 63);
+}
+
+/* RIGHT PROFILE */
+.nav-right {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.profile img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 2px solid #00bcd4;
+    cursor: pointer;
+}
+
+/* DROPDOWN */
+.dropdown {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: white;
+    color: black;
+    width: 160px;
+    border-radius: 8px;
+    display: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    overflow: hidden;
+    z-index: 99;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown a:hover {
+    background: #f1f1f1;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: rgb(0, 39, 99);
+    margin-right: 10px;
+}
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    padding: 20px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    margin-top: 15px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #0c1a2b;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.btn-primary { background: #00bcd4; color: white; }
+.btn-primary:hover { background: #0097a7; }
+
+.btn-danger { background: #e74c3c; color: white; }
+.btn-success { background: #2ecc71; color: white; }
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 320px;
+    text-align: center;
+    animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* =========================
+   AUTH (LOGIN / REGISTER)
+========================= */
+
+.auth-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+.auth-box {
+    width: 100%;
+    max-width: 380px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.auth-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0c1a2b;
+}
+
+.auth-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+}
+
+.auth-box input:focus {
+    border-color: #00bcd4;
+    box-shadow: 0 0 0 3px rgba(0,188,212,0.15);
+}
+
+.auth-box button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #00bcd4;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.auth-box button:hover {
+    background: #0097a7;
+}
+
+.auth-box p {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.auth-box a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+/* =========================
+   WAVE BACKGROUND
+========================= */
+
+.wave-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, #061a2b, #0c2d4a, #0a3f66);
+    overflow: hidden;
+    z-index: 0;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    width: 200%;
+    height: 180px;
+    background: rgba(0, 180, 255, 0.25);
+    border-radius: 50%;
+    animation: waveMove 10s linear infinite;
+}
+
+.wave1 { opacity: 0.5; bottom: 0; }
+.wave2 { opacity: 0.3; bottom: 15px; animation-duration: 14s; }
+.wave3 { opacity: 0.2; bottom: 30px; animation-duration: 18s; }
+
+@keyframes waveMove {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-center {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: #ebf7ff;
+        flex-direction: column;
+        display: none;
+        padding: 15px;
+        gap: 12px;
+    }
+
+    .nav-center.active {
+        display: flex;
+    }
+
+    .nav-center a {
+        padding: 10px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-right {
+        margin-left: auto;
+    }
+
+    .nav-left span {
+        font-size: 14px;
+    }
+}
+
+/* =========================
+   RESPONSIVE TYPOGRAPHY SYSTEM
+========================= */
+
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.3rem; }
+p  { font-size: 1rem; line-height: 1.6; }
+
+/* images responsive everywhere */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =========================
+   RESPONSIVE CONTAINERS
+========================= */
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* =========================
+   RESPONSIVE CARDS GRID (OPTIONAL UPGRADE)
+========================= */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.feature-card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   HERO RESPONSIVE TEXT
+========================= */
+
+.page-hero h1 {
+    font-size: 42px;
+}
+
+.page-hero p {
+    font-size: 18px;
+}
+
+/* =========================
+   BUTTON RESPONSIVE SIZE
+========================= */
+
+.btn {
+    font-size: 14px;
+}
+
+/* =========================
+   TABLET RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .page-hero h1 {
+        font-size: 32px;
+    }
+
+    .page-hero p {
+        font-size: 16px;
+    }
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    /* TEXT SCALE DOWN */
+    h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.4rem; }
+    h3 { font-size: 1.1rem; }
+    p  { font-size: 0.95rem; }
+
+    /* HERO */
+    .page-hero {
+        height: 35vh;
+        padding: 20px;
+    }
+
+    .page-hero h1 {
+        font-size: 24px;
+    }
+
+    .page-hero p {
+        font-size: 14px;
+    }
+
+    /* FEATURES -> STACK */
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    /* CARDS */
+    .card {
+        padding: 15px;
+    }
+
+    /* BUTTONS FULL WIDTH (OPTIONAL UX IMPROVEMENT) */
+    .btn {
+        width: 100%;
+        margin-top: 5px;
+    }
+}
+
+/* =========================
+   SMALL MOBILE (VERY SMALL SCREENS)
+========================= */
+
+@media (max-width: 480px) {
+
+    .auth-box {
+        padding: 20px;
+    }
+
+    .navbar {
+        padding: 10px;
+    }
+
+    .nav-left span {
+        font-size: 13px;
+    }
+
+    .page-hero h1 {
+        font-size: 20px;
+    }
+
+    .page-hero p {
+        font-size: 13px;
+    }
+}
